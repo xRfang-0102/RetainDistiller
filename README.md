@@ -38,7 +38,7 @@ retain-distiller prepare librispeech --root /path/to/LibriSpeech --split dev-cle
 retain-distiller prepare librispeech --root /path/to/LibriSpeech --split test-clean --cmudict /path/to/cmudict.dict --output data/librispeech/test-clean.jsonl --oov skip
 ```
 
-`--oov skip` drops complete utterances containing unknown words and writes a rejection report next to each manifest. Use identical resulting manifests for controlled comparisons. To retain the complete corpus, extend the local dictionary and use the default `--oov error`. Use `--text-only` without a dictionary for unlabeled distillation or ASR manifests. See [implementation notes](docs/IMPLEMENTATION.md) for phoneme conventions and reproduction boundaries.
+`--oov skip` drops complete utterances containing unknown words and writes a rejection report next to each manifest. Use identical resulting manifests for controlled comparisons. To retain the complete corpus, extend the local dictionary and use the default `--oov error`. Use `--text-only` without a dictionary for unlabeled distillation or ASR manifests.
 
 Train the probe first, then the student:
 
