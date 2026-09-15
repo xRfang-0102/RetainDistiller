@@ -12,8 +12,6 @@ Use Python 3.10+ in an isolated environment. Install a [PyTorch build appropriat
 python -m pip install -e .
 ```
 
-The offline integration checks use PyTorch 2.5.1 CPU, Transformers 4.46.3 and Python 3.12. Actual GPU training and paper-level performance have not been verified.
-
 ## Download resources separately
 
 | Resource | Download / access | Expected local location |
