@@ -77,7 +77,7 @@ Custom weight interfaces are `backbone.teacher_path`, `paths.probe_checkpoint`, 
 
 ## Evaluation
 
-The built-in downstream runners are basic frozen-encoder evaluations, **not complete official SUPERB recipes**. PR/ASR use CTC with greedy decoding; KS/IC/SID/ER use masked mean pooling and classification. Train separate downstream heads for each teacher/student. Official splits, class definitions and decoding recipes must be supplied for benchmark comparisons; an S3PRL feature adapter is included.
+ PR/ASR use CTC with greedy decoding; KS/IC/SID/ER use masked mean pooling and classification. Train separate downstream heads for each teacher/student. Official splits, class definitions and decoding recipes must be supplied for benchmark comparisons; an S3PRL feature adapter is included.
 
 ```bash
 retain-distiller downstream --config configs/hubert.yaml --overlay configs/task/pr.yaml
