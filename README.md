@@ -1,6 +1,5 @@
 # RetainDistiller
 
-Source implementation of **What Does Speech SSL Distillation Forget? Knowledge-Preserving Distillation of Speech Representations**, based on the supplied manuscript.
 
 Includes wav2vec 2.0 Base, HuBERT Base and WavLM Base+ interfaces; two-layer students; CTC probe pretraining; MSE, posterior, feature and direct-CTC objectives; optional LEH; training/resume; evaluation; KL/CKA analysis; student export; and inference. No model weights, datasets or benchmark results are included. All model loading is local-only.
 
