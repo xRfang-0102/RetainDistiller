@@ -72,8 +72,7 @@ retain-distiller distill --config configs/hubert.yaml --resume runs/hubert/poste
 | `feature.yaml` | Representation MSE + frozen linguistic feature MSE |
 | `direct_ctc.yaml` | Representation MSE + direct phoneme CTC; no pretrained probe required |
 
-Override existing keys with `--set key=value ...`. The default effective batch size is 16: four utterances per microbatch and four accumulation steps. For less GPU memory, use `--set train.batch_size=1 train.accumulation_steps=16`. Probe and downstream batch settings live under `probe_train` and `downstream_train`. CPU runs require `runtime.device=cpu runtime.precision=float32`.
-
+Override existing keys with `--set key=value ...`. The default effective batch size is 16: four utterances per microbatch and four accumulation steps. For less GPU memory, use `--set train.batch_size=1 train.accumulation_steps=16`. Probe and downstream batch settings live under `probe_train` and `downstream_train`. 
 Custom weight interfaces are `backbone.teacher_path`, `paths.probe_checkpoint`, `downstream.upstream_path` and `--resume`. Use `paths.output_dir` for a separate run. Resume requires an unchanged resolved config and restores optimizer, scheduler, scaler, sampler position and random states.
 
 ## Evaluation
