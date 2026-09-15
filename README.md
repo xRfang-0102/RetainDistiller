@@ -85,8 +85,7 @@ retain-distiller evaluate --checkpoint runs/hubert/posterior/pr/best.pt --manife
 retain-distiller analyze --checkpoint runs/hubert/posterior/last.pt --manifest data/librispeech/test-clean.jsonl --output runs/hubert/knowledge.json
 ```
 
-Use task overlays `asr`, `ks`, `ic`, `sid` or `er` for the other tasks. For ASR, first run `retain-distiller prepare characters --output data/vocab/characters.json`. For classification data, supply official split manifests and create a vocabulary from training labels with `retain-distiller prepare labels --manifest data/speech_commands/train.jsonl --output data/vocab/ks.json`. CSV conversion and manifest examples are in [implementation notes](docs/IMPLEMENTATION.md).
-
+Use task overlays `asr`, `ks`, `ic`, `sid` or `er` for the other tasks. For ASR, first run `retain-distiller prepare characters --output data/vocab/characters.json`. For classification data, supply official split manifests and create a vocabulary from training labels with `retain-distiller prepare labels --manifest data/speech_commands/train.jsonl --output data/vocab/ks.json`.
 Training writes `config.yaml`, `metrics.jsonl`, `last.pt` and `best.pt`. PER/WER/accuracy are fractions; retention is a percentage. `analyze` writes unscaled posterior KL and globally centered linear CKA. Use `retain-distiller retention --student STUDENT.json --teacher TEACHER.json --metric per --output RETENTION.json` for linguistic retention; use `--metric accuracy` for SID/ER.
 
 ## Source layout and checks
