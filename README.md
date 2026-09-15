@@ -1,8 +1,5 @@
 # RetainDistiller
 
-
-Includes wav2vec 2.0 Base, HuBERT Base and WavLM Base+ interfaces; two-layer students; CTC probe pretraining; MSE, posterior, feature and direct-CTC objectives; optional LEH; training/resume; evaluation; KL/CKA analysis; student export; and inference. No model weights, datasets or benchmark results are included. All model loading is local-only.
-
 ## Install
 
 Use Python 3.10+ in an isolated environment. Install a [PyTorch build appropriate for your GPU](https://pytorch.org/get-started/locally/), then run from this directory:
