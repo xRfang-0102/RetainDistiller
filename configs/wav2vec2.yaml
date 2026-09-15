@@ -1,0 +1,4 @@
+extends:
+- base.yaml
+- backbone/wav2vec2.yaml
+- method/posterior.yaml

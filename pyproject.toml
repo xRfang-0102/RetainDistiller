@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "retain-distiller"
+version = "0.1.0"
+description = "Speech SSL distillation with frozen linguistic posterior supervision"
+requires-python = ">=3.10"
+dependencies = [
+  "torch>=2.5,<3",
+  "transformers==4.46.3",
+  "numpy>=1.24,<3",
+  "PyYAML>=6,<7",
+  "soundfile>=0.12,<0.14",
+  "scipy>=1.10,<2",
+  "safetensors>=0.4.3"
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<9"]
+
+[project.scripts]
+retain-distiller = "retain_distiller.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

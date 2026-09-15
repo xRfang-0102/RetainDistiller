@@ -1,0 +1,5 @@
+method:
+  name: posterior
+  objective: posterior
+leh:
+  enabled: false

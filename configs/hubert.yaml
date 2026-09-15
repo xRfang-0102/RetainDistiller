@@ -1,0 +1,4 @@
+extends:
+- base.yaml
+- backbone/hubert.yaml
+- method/posterior.yaml

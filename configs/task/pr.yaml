@@ -1,0 +1,9 @@
+downstream:
+  name: pr
+  kind: ctc
+  target: tokens
+  unit: phone
+  vocab: data/vocab/arpabet.json
+  train_manifest: data/librispeech/train-clean-100.jsonl
+  valid_manifest: data/librispeech/dev-clean.jsonl
+  test_manifest: data/librispeech/test-clean.jsonl

@@ -1,0 +1,5 @@
+backbone:
+  name: wavlm
+  teacher_path: checkpoints/wavlm-base-plus
+downstream:
+  upstream_path: exports/wavlm-posterior

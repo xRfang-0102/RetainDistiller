@@ -1,0 +1,98 @@
+seed: 42
+paths:
+  runs: runs
+  output_dir: null
+  probe_checkpoint: null
+runtime:
+  device: cuda
+  precision: bfloat16
+  num_workers: 4
+backbone:
+  name: hubert
+  teacher_path: checkpoints/hubert-base-ls960
+  teacher_layer: 12
+  attention_mask: auto
+student:
+  num_layers: 2
+  initialization: teacher
+  teacher_init_layers: [0, 1]
+  freeze_feature_encoder: true
+  gradient_checkpointing: false
+  dropout: 0.0
+probe:
+  linguistic_size: 256
+leh:
+  enabled: false
+  bottleneck: 256
+  kernel_size: 3
+method:
+  name: posterior
+  objective: posterior
+  lambda_kp: 0.2
+  lambda_ctc: 0.2
+  beta: 0.1
+  temperature: 2.0
+data:
+  train_manifest: data/librispeech/train-clean-100.jsonl
+  valid_manifest: data/librispeech/dev-clean.jsonl
+  test_manifest: data/librispeech/test-clean.jsonl
+  phoneme_vocab: data/vocab/arpabet.json
+  sample_rate: 16000
+  normalize: true
+  distill_crop_seconds: null
+train:
+  max_steps: 100000
+  warmup_steps: 8000
+  learning_rate: 0.0002
+  batch_size: 4
+  accumulation_steps: 4
+  eval_batch_size: 2
+  weight_decay: 0.01
+  betas: [0.9, 0.999]
+  max_grad_norm: 1.0
+  log_every: 50
+  eval_every: 1000
+  save_every: 1000
+  eval_max_batches: null
+probe_train:
+  max_steps: 20000
+  warmup_steps: 2000
+  learning_rate: 0.001
+  batch_size: 4
+  accumulation_steps: 4
+  eval_batch_size: 2
+  weight_decay: 0.01
+  betas: [0.9, 0.999]
+  max_grad_norm: 1.0
+  log_every: 50
+  eval_every: 500
+  save_every: 500
+  eval_max_batches: null
+downstream:
+  name: pr
+  kind: ctc
+  target: tokens
+  unit: phone
+  upstream_path: exports/hubert-posterior
+  freeze_upstream: true
+  layer: -1
+  projection_size: 256
+  dropout: 0.1
+  vocab: data/vocab/arpabet.json
+  train_manifest: data/librispeech/train-clean-100.jsonl
+  valid_manifest: data/librispeech/dev-clean.jsonl
+  test_manifest: data/librispeech/test-clean.jsonl
+downstream_train:
+  max_steps: 20000
+  warmup_steps: 2000
+  learning_rate: 0.001
+  batch_size: 4
+  accumulation_steps: 4
+  eval_batch_size: 2
+  weight_decay: 0.01
+  betas: [0.9, 0.999]
+  max_grad_norm: 1.0
+  log_every: 50
+  eval_every: 500
+  save_every: 500
+  eval_max_batches: null

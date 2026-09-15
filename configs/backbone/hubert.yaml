@@ -1,0 +1,5 @@
+backbone:
+  name: hubert
+  teacher_path: checkpoints/hubert-base-ls960
+downstream:
+  upstream_path: exports/hubert-posterior

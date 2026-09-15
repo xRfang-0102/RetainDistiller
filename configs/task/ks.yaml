@@ -1,0 +1,9 @@
+downstream:
+  name: ks
+  kind: classification
+  target: label
+  unit: null
+  vocab: data/vocab/ks.json
+  train_manifest: data/speech_commands/train.jsonl
+  valid_manifest: data/speech_commands/valid.jsonl
+  test_manifest: data/speech_commands/test.jsonl

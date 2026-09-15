@@ -1,0 +1,9 @@
+downstream:
+  name: ic
+  kind: classification
+  target: label
+  unit: null
+  vocab: data/vocab/ic.json
+  train_manifest: data/fluent_speech_commands/train.jsonl
+  valid_manifest: data/fluent_speech_commands/valid.jsonl
+  test_manifest: data/fluent_speech_commands/test.jsonl

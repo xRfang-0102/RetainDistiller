@@ -1,0 +1,5 @@
+method:
+  name: direct_ctc
+  objective: direct_ctc
+leh:
+  enabled: false

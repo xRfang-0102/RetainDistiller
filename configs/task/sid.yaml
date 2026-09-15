@@ -1,0 +1,9 @@
+downstream:
+  name: sid
+  kind: classification
+  target: label
+  unit: null
+  vocab: data/vocab/sid.json
+  train_manifest: data/voxceleb1/train.jsonl
+  valid_manifest: data/voxceleb1/valid.jsonl
+  test_manifest: data/voxceleb1/test.jsonl

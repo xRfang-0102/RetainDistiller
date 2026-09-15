@@ -1,0 +1,9 @@
+downstream:
+  name: er
+  kind: classification
+  target: label
+  unit: null
+  vocab: data/vocab/er.json
+  train_manifest: data/iemocap/train.jsonl
+  valid_manifest: data/iemocap/valid.jsonl
+  test_manifest: data/iemocap/test.jsonl

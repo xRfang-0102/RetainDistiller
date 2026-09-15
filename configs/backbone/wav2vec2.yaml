@@ -1,0 +1,5 @@
+backbone:
+  name: wav2vec2
+  teacher_path: checkpoints/wav2vec2-base
+downstream:
+  upstream_path: exports/wav2vec2-posterior
