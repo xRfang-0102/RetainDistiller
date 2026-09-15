@@ -103,7 +103,6 @@ Training writes `config.yaml`, `metrics.jsonl`, `last.pt` and `best.pt`. PER/WER
 | `src/retain_distiller/analysis.py`, `metrics.py` | KL, CKA, PER/WER, accuracy, retention |
 | `src/retain_distiller/inference.py` | Student-only export and local inference |
 | `src/retain_distiller/s3prl_upstream.py` | Optional external evaluation adapter |
-| `tests/` | Synthetic offline checks; no downloaded assets |
 
 ```bash
 python -m pip install -e '.[test]'
