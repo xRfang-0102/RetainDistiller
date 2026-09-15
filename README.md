@@ -26,7 +26,7 @@ python -m pip install -e .
 | Speech Commands | [Dataset page](https://www.tensorflow.org/datasets/catalog/speech_commands) | User-defined |
 | Fluent Speech Commands | [Dataset page](https://fluent.ai/fluent-speech-commands-a-dataset-for-spoken-language-understanding-research/) | User-defined |
 
-Each teacher directory must contain its original `config.json` and compatible Hugging Face model weights (`model.safetensors`, `pytorch_model.bin`, or indexed shards). Raw Fairseq `.pt` checkpoints require separate conversion. No tokenizer or pretrained CTC head is required. Dataset access may require registration with its provider.
+Each teacher directory must contain its original `config.json` and compatible Hugging Face model weights (`model.safetensors`, `pytorch_model.bin`, or indexed shards). Raw Fairseq `.pt` checkpoints require separate conversion. No tokenizer or pretrained CTC head is required. 
 
 ## Quick start: HuBERT
 
